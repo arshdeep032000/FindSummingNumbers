@@ -3,32 +3,61 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Collections;
 namespace _730385
 {
     class Program
     {
         static void Main(string[] args)
         {
-            new GenerateList().Run(57);
+            new GeneralList().Run(57);
         }
-        class GenerateList
+
+
+        class GeneralList
         {
             const int LEN = 100;
-            ArrayList ListQ;
+            public ArrayList ListQ;
+            int AddUpToNumber = 0;
             public void Run(int AddUpToNumber)
+
             {
                 Random r = new Random();
-
                 ListQ = new ArrayList();
                 for (int i = 0; i < LEN; i++)
                 {
                     ListQ.Add(r.Next(100));
                 }
-                this.findTwoNumbersThatAddUpToNumber);
+                this.findTwoNumbersThatAddUpTo();
             }
+
+            public void findTwoNumbersThatAddUpTo()
+            {
+                foreach (int num1 in ListQ)
+                {
+                    int a, b;
+                    a = num1;
+                    foreach (int num2 in ListQ)
+                    {
+                        b = num2;
+                        if (a + b == 57)
+                        {
+                            Console.WriteLine("suitable match for the numbers are " + a + "" + b);
+                        }
+                    }
+
+
+                }
+                Console.ReadLine();
+            }
+
+
+
+
         }
     }
+}
+    
 
             
         
